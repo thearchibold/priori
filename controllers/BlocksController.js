@@ -1,5 +1,6 @@
 const db = require("../dao/db")
 const Block = require("../dao/Block")
+const {raw} = require("body-parser");
 
 module.exports = {
     saveBlock: async (block) => {
@@ -8,6 +9,13 @@ module.exports = {
             return data?.dataValues?.id
         } catch (e) {
             return null
+        }
+    },
+    updateBlock:async (blockId, block) => {
+        try{
+            const updateData = await db.blocks.update()
+        }catch (e) {
+
         }
     },
     saveTransactions: async (transactions) => {

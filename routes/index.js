@@ -4,7 +4,6 @@ const SaveTransaction = require('../controllers/web3Controller')
 
 router.post('/', async function(req, res, next) {
   let {clear, latestNBlock} = req.body
-
   try{
     await SaveTransaction(clear, latestNBlock)
   }catch (e){
