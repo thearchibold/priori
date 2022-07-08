@@ -1,6 +1,5 @@
 const db = require("../dao/db")
 const Block = require("../dao/Block")
-const {raw} = require("body-parser");
 
 module.exports = {
     saveBlock: async (block) => {
