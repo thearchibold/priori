@@ -1,5 +1,5 @@
 const Web3 = require('web3')
-const BlocksController = require("../controllers/BlocksController")
+const BlocksController = require("../services/DaoService")
 
 const provider = new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/5b53c456464f4ef384af20b4117bf01d")
 const web3 = new Web3(provider)
