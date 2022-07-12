@@ -1,9 +1,11 @@
+const config = require("./config")
+console.log(process.env.NODE_ENV)
 module.exports = {
-    HOST: process.env.HOST,
-    USER: process.env.USERNAME,
-    PASSWORD: process.env.PASSWORD,
-    DB: process.env.DB,
-    dialect: "mysql",
+    HOST: config[process.env.NODE_ENV].host,
+    USER: config[process.env.NODE_ENV].username,
+    PASSWORD: config[process.env.NODE_ENV].password,
+    DB: config[process.env.NODE_ENV].database,
+    dialect: config[process.env.NODE_ENV].dialect,
     pool: {
         max: 5,
         min: 0,

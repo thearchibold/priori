@@ -5,6 +5,7 @@
     </EXTENSION>
     <envs>
       <env name="DEBUG" value="priori-capital:*" />
+      <env name="NODE_ENV" value="development" />
     </envs>
     <method v="2" />
   </configuration>

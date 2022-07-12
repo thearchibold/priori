@@ -14,6 +14,13 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-db.blocks = require("./Block")(sequelize, Sequelize);
+db.block = require("./Block")(sequelize, Sequelize);
 db.transaction = require("./Transaction")(sequelize, Sequelize);
+
+db.block.hasMany(db.transaction, {
+    as: 'transactions', foreignKey: db.block.number
+})
+db.transaction.belongsTo(db.block, {
+    foreignKey: db.block.number
+})
 module.exports = db;
